@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+void prime(int a) {
+    if (a <= 1) {
+        return;
+    }
+
+    int i = 2;
+    while (a % i != 0) {
+        ++i;
+    }
+
+    printf("%d ", i);
+    prime(a / i);
+}
+
+int main() {
+    int a;
+    printf("Enter a number: ");
+    scanf("%d", &a);
+    
+    printf("Prime factors: ");
+    prime(a);
+    printf("\n");
+    
+    return 0;
+}
